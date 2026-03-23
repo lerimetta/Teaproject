@@ -1,0 +1,33 @@
+<div class="container">
+  <h1 class="fw-bold text-center h2 my-5">Наши чайные коллекции</h1>
+  <div class="row row-cols-md-3 gy-4 wow animate__backInLeft pb-5">
+    <div class="col" *ngFor="let product of products">
+      <div class="card h-100">
+        <a class="test-popup-link" href="assets/images/image1.png">
+          <img src="{{product.image}}" class="card-img-top " alt="чай">
+        </a>
+        <div class="card-body col d-flex flex-column">
+          <h3 class="card-title h5 fw-bold">{{product.title}}</h3>
+          <p class="card-text flex-grow-1">{{product.description|maxSymbols}}</p>
+          <a class="btn btn-primary px-5 align-self-start hvr-sink" [routerLink]="['/catalog',product.id]">Подробнее</a>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col">
+      <div class="card">
+        <a class="test-popup-link" href="assets/images/image2.png">
+          <img src="assets/images/image2.png" class="card-img-top" alt="чай">
+        </a>
+        <div class="card-body col">
+          <h3 class="card-title h5 fw-bold">Ягодный чай</h3>
+          <p class="card-text">Нотки ягод позволят вам расслабиться и насладиться великолепием этого чая</p>
+          <a href="#" class="btn btn-primary px-5 hvr-sink">Подробнее</a>
+        </div>
+      </div>
+    </div> -->
+
+
+
+
+  </div>
+</div>

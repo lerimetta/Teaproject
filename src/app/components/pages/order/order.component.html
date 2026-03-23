@@ -1,0 +1,68 @@
+<div class="d-flex и flex-column">
+  <h2 class="fw-bold text-center my-5" id="form-title" *ngIf="!isValid">Сделать заказ</h2>
+  <form [formGroup]="orderForm" class="row col-lg-6 mx-auto mb-5 g-3 wow animate__backInRight" id="main-form" novalidate
+    *ngIf="!isValid">
+    <div class="col-sm-4">
+      <label for="firstName" class="form-label">Имя</label>
+      <input type="text" class="form-control" id="firstName" formControlName="name" required value="">
+      <div class="text-danger" *ngIf="name?.invalid && (name?.dirty||name?.touched) && name?.errors?.['required']">
+        Заполните поле Имя
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <label for="lastName" class="form-label">Фамилия</label>
+      <input type="text" class="form-control" id="lastName" formControlName="last_name" required>
+      <div class="text-danger"
+        *ngIf="lastName?.invalid && (lastName?.dirty||lastName?.touched) && lastName?.errors?.['required']">
+        Заполните поле Фамилия
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <label for="phone" class="form-label">Телефон</label>
+      <input name="phone" type="tel" class="form-control" id="phone" formControlName="phone" required value="">
+      <div class="text-danger" *ngIf="phone?.invalid && (phone?.dirty||phone?.touched) && phone?.errors?.['required']">
+        Заполните поле Телефон
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <label for="country" class="form-label">Страна</label>
+      <input name="country" type="text" class="form-control" id="country" formControlName="country" required>
+      <div class="text-danger"
+        *ngIf=" country?.invalid && (country?.dirty||country?.touched) && country?.errors?.['required']">
+        Заполните поле Страна
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <label for="postcode" class="form-label">Индекс</label>
+      <input name="zip" type="text" class="form-control" id="postcode" formControlName="zip" required>
+      <div class="text-danger" *ngIf="zip?.invalid && (zip?.dirty||zip?.touched) && zip?.errors?.['required']">
+        Заполните поле Индекс
+      </div>
+    </div>
+    <div class="col-12">
+      <label for="address" class="form-label">Адрес</label>
+      <input name="address" type="text" class="form-control" id="address" formControlName="address" required>
+      <div class="text-danger"
+        *ngIf="address?.invalid && (address?.dirty||address?.touched) && address?.errors?.['required']">
+        Заполните поле Адрес
+      </div>
+    </div>
+    <div class="col-12">
+      <label for="address" class="form-label">Товар</label>
+      <input name="product" type="text" class="form-control" id="product" formControlName="product" readonly>
+    </div>
+    <div class="col-12">
+      <label for="address" class="form-label">Комментарий к заказу</label>
+      <input name="comment" type="text" class="form-control" id="comments" formControlName="comment">
+    </div>
+    <div class="col-12">
+      <button type="button" class="btn bg-primary text-white px-5 hvr-shadow" id="form-button"
+        (click)="createOrder()">Отправить</button>
+    </div>
+    <div class="text-danger" *ngIf="messageError">Произошла ошибка. Попробуйте еще раз.</div>
+
+  </form>
+  <div class="alert alert-primary col-lg-6 mx-auto my-5 flex-fill" role="alert" id="alert" *ngIf="isValid">
+    Спасибо за заказ. Мы свяжемся с вами в ближайшее время!
+  </div>
+</div>
