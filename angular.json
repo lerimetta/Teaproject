@@ -24,11 +24,24 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "style/jquery-ui.min.css",
+              "style/hover-min.css",
+              "style/magnific-popup.css",
+              "style/slick-theme.css",
+              "style/slick.css",
+              "style/styles.css",
               "src/styles.css"
 
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "scripts/jquery-3.7.1.min.js",
+              "scripts/jquery-ui.min.js",
+              "scripts/jquery.magnific-popup.min.js",
+              "scripts/script.js",
+              "scripts/slick.min.js",
+              "scripts/wow.min.js"
+
             ]
           },
           "configurations": {

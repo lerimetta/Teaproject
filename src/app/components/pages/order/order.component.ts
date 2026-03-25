@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
@@ -46,13 +46,17 @@ export class OrderComponent implements OnInit, OnDestroy {
 
   isValid = false;
   messageError = false;
+  good = this.cartService.product;
 
   constructor(private productService: ProductService, private cartService: CartService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+
     this.orderForm.patchValue({
       product: this.cartService.product
     })
+    console.log(this.cartService.product);
+    console.log(this.good);
   }
 
   private subscriptionOrder: Subscription | null = null;

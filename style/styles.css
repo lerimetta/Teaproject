@@ -1,13 +1,13 @@
 body{
     font-family: Arial, sans-serif;
-   
+
 }
 
 .slick-next:before {
-    content: url("../image/next.svg");
+    content: url("/src/assets/images/next.svg");
 }
 .slick-prev:before {
-    content: url("../image/prev.svg");
+    content: url("/src/assets/image/prev.svg");
 }
 
 .single-item{
@@ -24,11 +24,11 @@ body{
     top: calc(50%);
     right: 34px;
     z-index: 5;
-   
+
 }
 
 .ui-icon{
-   background-image: url("../image/down.svg");
+   background-image: url("/src/image/down.svg");
    background-position: center;
    background-size: cover;
    position: absolute;
@@ -39,7 +39,7 @@ body{
 }
 
 .ui-state-active .ui-icon, .ui-button:active .ui-icon {
-    background-image: url("../image/up.svg");
+    background-image: url("/src/image/up.svg");
 }
 
 .ui-widget-content {
@@ -47,6 +47,6 @@ body{
 }
 
 .ui-state-hover .ui-icon {
-    background-image: url("../image/up.svg");
+    background-image: url("/src/image/up.svg");
 }
 
