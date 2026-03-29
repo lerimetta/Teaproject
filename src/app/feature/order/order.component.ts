@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { CartService } from 'src/app/services/cart.service';
-import { ProductService } from 'src/app/services/product.service';
+import { ProductService } from 'src/app/core/services/product.service';
 import { OrderType } from 'src/app/types/order.type';
 
 
@@ -44,26 +44,26 @@ export class OrderComponent implements OnInit, OnDestroy {
     return this.orderForm.get('address');
   }
 
-  isValid = false;
-  messageError = false;
-  good = this.cartService.product;
+  isValid: boolean = false;
+  messageError: boolean = false;
 
-  constructor(private productService: ProductService, private cartService: CartService, private fb: FormBuilder) { }
+  constructor(private productService: ProductService, private activatedRoute: ActivatedRoute, private fb: FormBuilder) { }
 
   ngOnInit(): void {
-
-    this.orderForm.patchValue({
-      product: this.cartService.product
+    this.activatedRoute.queryParams.subscribe((params) => {
+      if (params['product']) {
+        this.orderForm.patchValue({
+          product: params['product']
+        })
+      }
     })
-    console.log(this.cartService.product);
-    console.log(this.good);
   }
 
   private subscriptionOrder: Subscription | null = null;
   ngOnDestroy(): void {
     this.subscriptionOrder?.unsubscribe();
   }
-  createOrder() {
+  createOrder(): void {
     this.subscriptionOrder = this.productService.createOrder(this.orderForm.value as OrderType)
       .subscribe(response => {
         if (response.success && !response.message) {

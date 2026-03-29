@@ -3,13 +3,6 @@ $(document).ready(function () {
     { animateClass: 'animate__animated',}
   ).init();
 
-  $('.single-item').slick({
-    infinite: true,
-    speed: 500,
-    fade: true,
-    cssEase: 'linear'
-  });
-
   $('.test-popup-link').magnificPopup({
     type: 'image'
   });

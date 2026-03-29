@@ -1,52 +1,51 @@
 body{
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 
 }
 
 .slick-next:before {
-    content: url("/src/assets/images/next.svg");
+  content: url("/src/image/next.svg");
 }
 .slick-prev:before {
-    content: url("/src/assets/image/prev.svg");
+  content: url("/src/image/prev.svg");
 }
-
 .single-item{
-    position: relative;
+  position: relative;
 }
 .slick-prev{
-    position: absolute;
-    top: calc(50%);
-    left: 12px;
-    z-index: 5;
+  position: absolute;
+  top: calc(50%);
+  left: 12px;
+  z-index: 5;
 }
 .slick-next{
-    position: absolute;
-    top: calc(50%);
-    right: 34px;
-    z-index: 5;
+  position: absolute;
+  top: calc(50%);
+  right: 34px;
+  z-index: 5;
 
 }
-
-.ui-icon{
-   background-image: url("/src/image/down.svg");
-   background-position: center;
-   background-size: cover;
-   position: absolute;
-   right: 24px;
-   top:24px;
-   width: 20px;
-   height: 20px;
+.ui-icon {
+  background-image: url("/src/image/down.svg");
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: 20px;
+  height: 20px;
 }
 
-.ui-state-active .ui-icon, .ui-button:active .ui-icon {
-    background-image: url("/src/image/up.svg");
+.ui-state-active .ui-icon,
+.ui-button:active .ui-icon {
+  background-image: url("/src/image/up.svg");
 }
 
 .ui-widget-content {
-    border: 0;
+  border: 0;
 }
 
 .ui-state-hover .ui-icon {
-    background-image: url("/src/image/up.svg");
+  background-image: url("/src/image/up.svg");
 }
 
